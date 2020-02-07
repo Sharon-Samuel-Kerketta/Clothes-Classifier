@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="../../static/assets/styles.css" rel="stylesheet" type="text/css">
+    <title>Clothes Classifier</title>
+</head>
+<body>
+    {% load static %}
+    <nav>
+        <ul class="nav_list">
+            <li class="logo"><img src="../../static/assets/images/logo.png"></li>
+            <a href="../../../classifier/dindex/"><li class="home">Dataset-Based</li></a>
+            <a href="../../../classifier/uindex/"><li>User-Based</li></a>
+            <a href="../../../classifier/user/"><li>User</li></a>
+        </ul>
+    </nav>
+    <section class="main_page">
+        <div class="home_heading row">
+            <h2>Clothes Classifier</h2>
+            <h4>(Model to Classify the Clothes)</h4>
+        </div>
+        <div class="input_images">
+            <ul class="images_list">
+                <li>
+                    <a href="../../../classifier/dpredictions/t-shirt.jpg" ><img src="../../static/assets/images/t-shirt.jpg" alt="T-shirt"></a>
+                 </li>
+                 <li>
+                    <a href="../../../classifier/dpredictions/trousers.png" ><img src="../../static/assets/images/trousers.png" alt="Trousors"></a>
+                </li>
+                <li>
+                    <a href="../../../classifier/dpredictions/pullover.PNG" ><img src="../../static/assets/images/pullover.PNG" alt="Pullover"></a>
+                </li>
+                <li>
+                    <a href="../../../classifier/dpredictions/dress.jpg" ><img src="../../static/assets/images/dress.jpg" alt="Dress"></a>
+                </li>
+                <li>
+                    <a href="../../../classifier/dpredictions/coat.jpg" ><img src="../../static/assets/images/coat.jpg" alt="Coat"></a>
+                </li>
+                <li>
+                    <a href="../../../classifier/dpredictions/sandal.PNG" ><img src="../../static/assets/images/sandal.PNG" alt="Sandal"></a>
+                </li>
+                <li>
+                    <a href="../../../classifier/dpredictions/shirt.PNG" ><img src="../../static/assets/images/shirt.PNG" alt="Shirt"></a>
+                </li>
+                <li>
+                    <a href="../../../classifier/dpredictions/sneaker.jpg" ><img src="../../static/assets/images/sneaker.jpg" alt="Sneaker"></a>
+                </li>
+                <li>
+                    <a href="../../../classifier/dpredictions/bag.jpg" ><img src="../../static/assets/images/bag.jpg" alt="Bag"></a>
+                </li>
+                <li>
+                     <a href="../../../classifier/dpredictions/ankleboot.jpg" ><img src="../../static/assets/images/ankleboot.jpg" alt="Ankleboot"></a>
+                </li>
+            </ul>
+            
+        </div>
+        <h5>Select any of them to predict</h5>
+        <div class="prediction">
+            {% block prediction %}
+
+            {% endblock %}
+        </div>
+    </section>
+    
+</body>
+</html>

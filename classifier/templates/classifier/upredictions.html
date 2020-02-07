@@ -1,0 +1,6 @@
+{% extends 'classifier/uindex.html' %}
+{% block prediction %}
+    <h3>{{title}} : {{prediction_class}}</h3>
+    <h4>{{prediction_perc}}% </h4>
+    <a href="../../classifier/uindex/">Reset</a>
+{% endblock %}

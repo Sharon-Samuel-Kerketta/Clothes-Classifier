@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="../../static/assets/styles.css" rel="stylesheet" type="text/css">
+    <title>Clothes Classifier</title>
+</head>
+<body>
+    {% load static %}
+    <nav>
+        <ul class="nav_list">
+            <li class="logo"><img src="../../static/assets/images/logo.png"></li>
+            <a href="../../../classifier/dindex/"><li>Dataset-Based</li></a>
+            <a href="../../../classifier/uindex/"><li class="home">User-Based</li></a>
+            <a href="../../../classifier/user/"><li>User</li></a>
+            <a href="../../../outfit_classification/admin/"><li class="login">Add Images</li></a>
+        </ul>
+    </nav>
+    <section class="main_page">
+        <div class="home_heading row">
+            <h2>Clothes Classifier</h2>
+            <h4>(Model to Classify the Clothes)</h4>
+        </div>
+        <div class="input_images">
+            <ul class="images_list">
+                {% for each_image in all_images %}
+                <li>
+                   <a href="../../../classifier/upredictions/{{each_image.image}}" ><img src="{{each_image.image.url}}" alt="User_Image"></a>
+                </li>
+                {% endfor %}
+                
+            </ul>
+            
+        </div>
+        <h5>Select any of them to predict</h5>
+        <div class="prediction">
+            {% block prediction %}
+
+            {% endblock %}
+        </div>
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="../../static/assets/styles.css" rel="stylesheet" type="text/css">
+    <title>Clothes Classifier</title>
+</head>
+<body>
+    {% load static %}
+    <nav>
+        <ul class="nav_list">
+            <li class="logo"><img src="../../static/assets/images/logo.png"></li>
+            <a href="../../../classifier/dindex/"><li>Dataset-Based</li></a>
+            <a href="../../../classifier/uindex/"><li>User-Based</li></a>
+            <a href="../../../classifier/user/"><li class="home_user">User</li></a>
+           <!-- <a href="../../../outfit_classification/admin/"><li class="login">Add Images</li></a>  -->
+        </ul>
+    </nav>
+    <section class="main_page user">
+        <div class="home_heading row">
+            <h2>Clothes Classifier</h2>
+            <h4>(Model to Classify the Clothes)</h4>
+        </div>
+        <div class="input_images">
+            <h3>T-shirt/Top</h3>
+            <ul class="images_list">
+                {% for each_prediction in all_prediction %}
+                    {% if each_prediction.prediction_class == 'T-Shirt/Top' %}
+                        <li>
+                              <img src="/media/{{each_prediction.image}}" alt="T-Shirt/Top"></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>   
+        </div>
+        <div class="input_images">
+                <h3>Trousors</h3>
+            <ul class="images_list">
+                {% for each_prediction in all_prediction %}
+                    {% if each_prediction.prediction_class == 'Trousors' %}
+                        <li>
+                            <img src="/media/{{each_prediction.image}}" alt="Trousors"></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                
+            </ul>   
+        </div>
+        <div class="input_images">
+                <h3>Pullover</h3>
+            <ul class="images_list">
+               {% for each_prediction in all_prediction %}
+                    {% if each_prediction.prediction_class == 'Pullover' %}
+                        <li>
+                            <img src="/media/{{each_prediction.image}}" alt="Pullover"></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>   
+        </div>
+        <div class="input_images">
+            <h3>Dress</h3>
+            <ul class="images_list">
+               {% for each_prediction in all_prediction %}
+                    {% if each_prediction.prediction_class == 'Dress' %}
+                        <li>
+                            <img src="/media/{{each_prediction.image}}" alt="Dress"></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>   
+        </div>
+        <div class="input_images">
+            <h3>Coat</h3>
+            <ul class="images_list">
+                {% for each_prediction in all_prediction %}
+                    {% if each_prediction.prediction_class == 'Coat' %}
+                        <li>
+                            <img src="/media/{{each_prediction.image}}" alt="Coat"></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>   
+        </div>
+        <div class="input_images">
+            <h3>Slippers/Sandal</h3>
+            <ul class="images_list">
+                {% for each_prediction in all_prediction %}
+                    {% if each_prediction.prediction_class == 'Slippers/Sandal' %}
+                        <li>
+                            <img src="/media/{{each_prediction.image}}" alt="Slippers/Sandal"></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>   
+        </div>
+        <div class="input_images">
+            <h3>Shirt</h3>
+            <ul class="images_list">
+                  {% for each_prediction in all_prediction %}
+                    {% if each_prediction.prediction_class == 'Shirt' %}
+                        <li>
+                            <img src="/media/{{each_prediction.image}}" alt="Shirt"></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>   
+        </div>
+        <div class="input_images">
+            <h3>Shoe/Sneaker</h3>
+            <ul class="images_list">
+                    {% for each_prediction in all_prediction %}
+                    {% if each_prediction.prediction_class == 'Shoe/Sneaker' %}
+                        <li>
+                            <img src="/media/{{each_prediction.image}}" alt="Shoe/Sneaker"></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>   
+        </div>
+       <div class="input_images">
+            <h3>Bag</h3>
+            <ul class="images_list">
+                  {% for each_prediction in all_prediction %}
+                    {% if each_prediction.prediction_class == 'Bag' %}
+                        <li>
+                            <img src="/media/{{each_prediction.image}}" alt="Bag"></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>   
+        </div>
+        <div class="input_images">
+            <h3>Ankle Boot</h3>
+            <ul class="images_list">
+                {% for each_prediction in all_prediction %}
+                    {% if each_prediction.prediction_class == 'Ankle Boot' %}
+                        <li>
+                            <img src="/media/{{each_prediction.image}}" alt="Ankle Boots"></a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>   
+        </div>
+    </section>
+    
+</body>
+</html>
