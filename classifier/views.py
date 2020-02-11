@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render
-from classifier.prediction.pred import *
+from classifier.prediction.pred import db_predict_image,user_predict_image,user_image
 from .models import Add_Images
 # Create your views here.
 
