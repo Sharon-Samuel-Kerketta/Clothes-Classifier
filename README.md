@@ -1,4 +1,4 @@
-# Outfit Classifier
+# Clothes Classifier
 
 ## Machine Learning Project to classify the Images
 
