@@ -25,7 +25,7 @@ SECRET_KEY = '(kt#947-&kawz)18&=--6$1$m0y=in_dm14+s-bqc3s&j149o1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['outfit-classification.herokuapp.com','127.0.0.1']
 
 
 # Application definition
