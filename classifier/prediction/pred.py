@@ -15,18 +15,20 @@ sess = tf.compat.v1.Session()
 graph = tf.compat.v1.get_default_graph()
 
 set_session(sess)
-loaded_model=load_model('./classifier/prediction/model_conv2d_3.h5')
+loaded_model=load_model('./classifier/prediction/model92_with_aug.h5')
 
 def db_predict_image(img):
     pred = dict()
-    
-    path='./classifier/prediction/db_images/'
-    img_array = cv2.imread(path+img ,cv2.IMREAD_GRAYSCALE) 
     IMG_SIZE = 28
+    path='./classifier/prediction/db_images/'
+    
+    img_array = cv2.imread(path+img).astype('float32')
+    img_array = cv2.cvtColor(img_array,cv2.COLOR_BGR2GRAY)
+    
     new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
     new_array=new_array.reshape(1,28,28,1)
     new_array = new_array.astype('float32')
-    new_array /= 255
+    new_array /= 255.0
 
     with graph.as_default():
         set_session(sess)
@@ -37,13 +39,15 @@ def db_predict_image(img):
 
 def user_predict_image(img):
     path='./classifier/prediction/user_images/'
-    img_array = cv2.imread(path+img ,cv2.IMREAD_GRAYSCALE) 
     IMG_SIZE = 28
     pred=dict()
+
+    img_array = cv2.imread(path+img).astype('float32')
+    img_array = cv2.cvtColor(img_array,cv2.COLOR_BGR2GRAY)
     new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
     new_array=new_array.reshape(1,28,28,1)
     new_array = new_array.astype('float32')
-    new_array=tf.keras.utils.normalize(new_array,axis=1)
+    new_array /= 255.0
 
     with graph.as_default():
         set_session(sess)
@@ -54,12 +58,16 @@ def user_predict_image(img):
 
 def user_image(img):
     path='./classifier/prediction/user_images/'
-    img_array = cv2.imread(path+img ,cv2.IMREAD_GRAYSCALE) 
     IMG_SIZE = 28
     pred=dict()
+
+    img_array = cv2.imread(path+img).astype('float32')
+    img_array = cv2.cvtColor(img_array,cv2.COLOR_BGR2GRAY)
     new_array = cv2.resize(img_array, (IMG_SIZE, IMG_SIZE))
-    new_array=tf.keras.utils.normalize(new_array,axis=1)
     new_array=new_array.reshape(1,28,28,1)
+    new_array = new_array.astype('float32')
+    new_array /= 255.0
+
     with graph.as_default():
         set_session(sess)
         prediction=loaded_model.predict(new_array)
